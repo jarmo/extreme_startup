@@ -1,2 +1,2 @@
-require File.dirname(__FILE__) + '/src/my_server'
+require File.dirname(__FILE__) + '/lib/my_server'
 run Sinatra::Application
