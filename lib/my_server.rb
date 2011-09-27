@@ -14,6 +14,10 @@ get '/' do
     ($1.to_i + $2.to_i).to_s
   when /which of the following numbers is the largest: (.*)/
     $1.split(",").map {|i| i.to_i}.max.to_s
+  when /which of the following numbers is both a square and a cube: (\d+), (\d+)/
+    x = $1.to_i
+    y = $2.to_i
+    x == x*x && x == x*x*x && x.to_s || y == y*y && y == y*y*y && y.to_s
   else
     params.inspect
   end
