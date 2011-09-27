@@ -18,6 +18,8 @@ get '/' do
     x = $1.to_i
     y = $2.to_i
     x == x*x && x == x*x*x && x.to_s || y == y*y && y == y*y*y && y.to_s
+  when /what is (\d+) multiplied by (\d+)/
+    ($1.to_i * $2.to_i).to_s
   else
     params.inspect
   end
