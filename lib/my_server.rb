@@ -21,6 +21,8 @@ get '/' do
     "Jarmo & Andri (Awesome!)"
   when /what is (\d+) plus (\d+)/
     ($1.to_i + $2.to_i).to_s
+  when /which of the following numbers is the largest: (.*)/
+    $1.split(",").map {|i| i.to_i}.max.to_s
   else
     params.inspect
   end
