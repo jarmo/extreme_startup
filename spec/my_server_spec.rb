@@ -1,7 +1,7 @@
 require "rack/test"
 require File.dirname(__FILE__) + '/../lib/my_server'
 
-describe MyServer do
+describe "MyServer" do
   include Rack::Test::Methods
 
   it "shows 'johannes' text on main page" do
@@ -10,6 +10,6 @@ describe MyServer do
   end
 
   def app
-    MyServer.new
+    Sinatra::Application
   end
 end
